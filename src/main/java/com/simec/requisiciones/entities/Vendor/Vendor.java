@@ -1,9 +1,9 @@
-package com.simec.requisiciones.entities.ProductType;
+package com.simec.requisiciones.entities.Vendor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.simec.requisiciones.entities.Product.Product;
+import com.simec.requisiciones.entities.PurchaseRequisition.PurchaseRequisition;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,24 +11,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity(name = "product_types")
-public class ProductType {
+
+@Entity(name = "vendors")
+public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "type_name")
-    private String typeName;
-    @Column(name = "description")
-    private String description;
+    @Column(name = "vendor_name")
+    private String vendorName;
+    @Column(name = "vendor_email")
+    private String vendorEmail;
+    @Column(name = "vendor_phone")
+    private String vendorPhone;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     @Column(name = "last_modified_at")
     private LocalDateTime lastModifiedAt;
 
-    // @OneToMany(mappedBy = "productType")
-    // private List<Product> products;
+    // @OneToMany(targetEntity = PurchaseRequisition.class, mappedBy = "vendor")
+    // private List<PurchaseRequisition> purchaseRequisitions;
 }

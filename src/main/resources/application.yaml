@@ -2,7 +2,7 @@ spring:
   application:
     name: requisiciones
   datasource:
-    url: jdbc:mysql://localhost:3308/s_conta_dev?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3308/s_requisiciones?createDatabaseIfNotExist=true
     username: root
     password: simecdev
     hikari:
