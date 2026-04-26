@@ -12,9 +12,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "products")
@@ -32,7 +32,7 @@ public class Product {
     private LocalDateTime createdAt;
     @Column(name = "last_modified_at")
     private LocalDateTime lastModifiedAt;
-    
+
     @ManyToOne(targetEntity = ProductType.class)
     @JoinColumn(name = "product_type_id")
     private ProductType productType;
