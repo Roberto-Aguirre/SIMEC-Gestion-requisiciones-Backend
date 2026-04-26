@@ -13,7 +13,7 @@
 //         return new WebMvcConfigurer() {
 //             @Override
 //             public void addCorsMappings(CorsRegistry registry) {
-//                 registry.addMapping("/api/v1/**") // Define qué rutas se ven afectadas
+//                 registry.addMapping("v1/**") // Define qué rutas se ven afectadas
 //                         .allowedOrigins("http://localhost","http://localhost:4200") // Orígenes permitidos
 //                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP
 //                         .allowedHeaders("*") // Permitir todos los headers (Auth, Content-Type, etc)
