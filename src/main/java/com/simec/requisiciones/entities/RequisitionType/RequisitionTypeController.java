@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("requisition-types")
+@RequestMapping("/api/requisition-types")
 public class RequisitionTypeController {
     
     @Autowired

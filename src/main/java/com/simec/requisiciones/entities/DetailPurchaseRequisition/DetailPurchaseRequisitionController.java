@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("detail-purchase-requisitions")
+@RequestMapping("/api/detail-purchase-requisitions")
 public class DetailPurchaseRequisitionController {
     
     @Autowired
