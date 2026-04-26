@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.simec.requisiciones.dtos.PurchaseRequisition.PurchaseRequisitionDTO;
+import com.simec.requisiciones.entities.DetailPurchaseRequisition.DetailPurchaseRequisition;
+
 @RestController
 @RequestMapping("/api/purchase-requisitions")
 public class PurchaseRequisitionController {
@@ -36,7 +39,21 @@ public class PurchaseRequisitionController {
     }
     
     @PostMapping
-    public ResponseEntity<PurchaseRequisition> createPurchaseRequisition(@RequestBody PurchaseRequisition purchaseRequisition) {
+    public ResponseEntity<PurchaseRequisition> createPurchaseRequisition(@RequestBody PurchaseRequisitionDTO purchaseRequisition) {
+        List<DetailPurchaseRequisition> purchaseDetails = purchaseRequisition.getDetails().stream()
+                .map(detail -> DetailPurchaseRequisition.builder()
+                        .product(detail.getProduct())
+                        .quantity(detail.getQuantity())
+                        .unitPrice(detail.getUnitPrice())
+                        .build())
+                .toList();
+
+        PurchaseRequisition newPurchaseRequisition = PurchaseRequisition.builder()
+                .description(purchaseRequisition.getDescription())
+                .comments(null)
+                .details()
+                .status("PENDIENTE")
+                .build();
         PurchaseRequisition savedPurchaseRequisition = purchaseRequisitionService.savePurchaseRequisition(purchaseRequisition);
         return new ResponseEntity<>(savedPurchaseRequisition, HttpStatus.CREATED);
     }

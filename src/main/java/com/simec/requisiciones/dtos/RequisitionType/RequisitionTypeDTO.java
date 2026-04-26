@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class RequisitionTypeDTO {
     private Long id;

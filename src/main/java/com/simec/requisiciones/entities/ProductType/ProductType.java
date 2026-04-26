@@ -8,8 +8,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 @Entity(name = "product_types")
 public class ProductType {

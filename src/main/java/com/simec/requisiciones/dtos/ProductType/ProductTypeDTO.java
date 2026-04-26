@@ -1,18 +1,13 @@
 package com.simec.requisiciones.dtos.ProductType;
 
 import java.time.LocalDateTime;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class ProductTypeDTO {
     private Long id;

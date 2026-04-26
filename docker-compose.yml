@@ -1,0 +1,21 @@
+services:
+  mysql8:
+    image: mysql:8.0
+    container_name: simecdev
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-simecdev}
+      # MYSQL_DATABASE: ${MYSQL_DATABASE:-mydb}
+      # MYSQL_USER: ${MYSQL_USER:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-simecdev}
+    ports:
+      - "${MYSQL_PORT:-3308}:3306"
+      # - 3308:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  mysql_data:

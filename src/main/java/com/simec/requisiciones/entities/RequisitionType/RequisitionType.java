@@ -13,8 +13,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
+
 @Entity(name = "requisition_types")
 public class RequisitionType {
     @Id

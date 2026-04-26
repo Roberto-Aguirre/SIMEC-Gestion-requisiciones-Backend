@@ -2,9 +2,11 @@ package com.simec.requisiciones.dtos.Measures;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class MeasuresDTO {
     private Long id;

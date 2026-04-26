@@ -27,6 +27,7 @@ import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class PurchaseRequisitionDTO {
     private Long id;

@@ -12,8 +12,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
+
 @Entity(name = "projects")
 public class Project {
     @Id

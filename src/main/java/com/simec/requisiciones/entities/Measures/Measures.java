@@ -9,9 +9,11 @@ import jakarta.persistence.Id;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 @Entity(name = "measures")
 public class Measures {

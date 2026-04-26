@@ -19,12 +19,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
+@Builder
+
 @Entity(name = "purchase_requisitions")
 public class PurchaseRequisition {
     @Id
@@ -41,11 +44,8 @@ public class PurchaseRequisition {
     private LocalDateTime createdAt;
     @Column(name = "last_modified_at")
     private LocalDateTime lastModifiedAt;
-// Done
     @ManyToOne(targetEntity = RequisitionType.class, fetch = FetchType.LAZY)
-    private RequisitionType requisitionType;
-// Done
- 
+    private RequisitionType requisitionType; 
     
     @ManyToOne(targetEntity = Vendor.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "vendor_id")

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.simec.requisiciones.dtos.Commentary.CommentaryDTO;
+
 @RestController
 @RequestMapping("/api/commentaries")
 public class CommentaryController {
@@ -36,8 +38,12 @@ public class CommentaryController {
     }
     
     @PostMapping
-    public ResponseEntity<Commentary> createCommentary(@RequestBody Commentary commentary) {
-        Commentary savedCommentary = commentaryService.saveCommentary(commentary);
+    public ResponseEntity<Commentary> createCommentary(@RequestBody CommentaryDTO commentarydtoin) {
+        Commentary commentaryIn = Commentary.builder()
+                .comment(commentarydtoin.getComment())
+                .build();
+        Commentary savedCommentary = commentaryService.saveCommentary(commentaryIn);
+
         return new ResponseEntity<>(savedCommentary, HttpStatus.CREATED);
     }
     

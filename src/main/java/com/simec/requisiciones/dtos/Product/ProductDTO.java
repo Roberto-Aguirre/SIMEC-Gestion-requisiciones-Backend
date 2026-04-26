@@ -6,10 +6,12 @@ import com.simec.requisiciones.entities.Measures.Measures;
 import com.simec.requisiciones.entities.ProductType.ProductType;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class ProductDTO {
     private Long id;

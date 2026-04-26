@@ -7,10 +7,12 @@ import com.simec.requisiciones.entities.Product.Product;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
 public class DetailPurchaseRequisitionDTO {
     private Long detailId;

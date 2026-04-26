@@ -15,10 +15,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@Getter
 @NoArgsConstructor
+@Builder
 @Entity(name = "detail_purchase_requisitions")
 public class DetailPurchaseRequisition {
     @Id
